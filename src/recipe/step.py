@@ -34,6 +34,7 @@ class step:
         self.dependencies = dependencies if dependencies is not None else []
         self.completed = False
         self.requisites_met = self.__check_dependencies()
+        self.upwards = []  # Steps that depend on this step
 
     def __repr__(self):
         return f"Step: {self.description} \\ (Duration: {self.duration} mins)"
@@ -53,15 +54,34 @@ class step:
             time += dep.minimum_time_to_complete()
         return time
     
+    def longest_timechain_after_completion(self):
+        """Return the longest total duration of the chain of dependent steps
+        that follow this step. This represents how long it will take to
+        finish the longest dependent branch after this step is completed.
+        """
+        if not self.upwards:
+            return 0
+        times = []
+        for up in self.upwards:
+            # include the upwards step's duration plus any further dependent time
+            times.append(up.duration + up.longest_timechain_after_completion())
+        return max(times)
+    
     
 class recipe:
     def __init__(self, name: str):
         self.name = name
         self.steps = []
         self.uuid = uuid.uuid4()
+        self.__link_up_steps()
 
     def add_step(self, step: step):
         self.steps.append(step)
+    
+    def __link_up_steps(self):
+        for step in self.steps:
+            for dep in step.dependencies:
+                dep.upwards.append(step)
     
     def total_duration(self):
         return sum(step.duration for step in self.steps)
@@ -104,12 +124,7 @@ class recipe:
         ingredient_list = [ingredient(name, quantity, unit) for (name, unit), quantity in ingredient_dict.items()]
         return ingredient_list
     
-    def create_dependency_graph(self):
-        graph = {}
-        for step in self.steps:
-            graph[step.name] = [dep.name for dep in step.dependencies]
-        return graph
-    
+   
     @classmethod
     def from_json_config(cls, config_path: str) -> 'recipe':
         """
@@ -218,5 +233,7 @@ class recipe:
             
             # Add step to recipe
             new_recipe.add_step(step_obj)
-        
+        # Link upwards dependencies so `longest_timechain_after_completion` works
+        new_recipe.__link_up_steps()
+
         return new_recipe

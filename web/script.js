@@ -86,6 +86,9 @@ const RECIPES = {
 let currentRecipe = null;
 let completedSteps = new Set();
 const STORAGE_KEY = 'recipeOrdererState';
+// Indexes for quick graph queries (populated per-recipe)
+let stepsById = {};
+let upwardsMap = {};
 
 // DOM Elements
 const recipeDropdown = document.getElementById('recipe-dropdown');
@@ -167,6 +170,7 @@ function renderRecipe() {
     renderIngredients();
 
     // Steps
+    buildIndexes();
     renderSteps();
 
     // Progress
@@ -189,22 +193,46 @@ function renderIngredients() {
 function renderSteps() {
     stepsList.innerHTML = '';
     
-    currentRecipe.steps.forEach(step => {
-        const isCompleted = completedSteps.has(step.id);
-        const dependenciesMet = checkDependenciesMet(step);
-        const isAvailable = dependenciesMet && !isCompleted;
-
-        const stepEl = document.createElement('div');
-        stepEl.className = 'step-item';
-        if (isCompleted) {
-            stepEl.classList.add('completed');
-        } else if (isAvailable) {
-            stepEl.classList.add('available');
+    // Filter out completed steps and separate into available/unavailable
+    const incompleteSteps = currentRecipe.steps.filter(step => !completedSteps.has(step.id));
+    
+    const availableSteps = [];
+    const unavailableSteps = [];
+    
+    incompleteSteps.forEach(step => {
+        const isAvailable = checkDependenciesMet(step);
+        if (isAvailable) {
+            availableSteps.push(step);
+        } else {
+            unavailableSteps.push(step);
         }
+    });
+    
+    // Sort available steps by longestChainAfterCompletion descending (longest first)
+    availableSteps.sort((a, b) => {
+        const chainA = longestChainAfterCompletion(a.id);
+        const chainB = longestChainAfterCompletion(b.id);
+        return chainB - chainA;
+    });
+    
+    // Render available steps first, then unavailable
+    const stepsToRender = [...availableSteps, ...unavailableSteps];
+    
+    stepsToRender.forEach(step => {
+        const isAvailable = availableSteps.includes(step);
+        
+        // Compute longest remaining time-chain after this step is completed
+        const chainTime = longestChainAfterCompletion(step.id);
 
         const dependencyText = step.dependencies.length > 0 
             ? `Requires completion of: Step ${step.dependencies.join(', Step ')}`
             : 'No dependencies - can start anytime!';
+
+        const stepEl = document.createElement('div');
+        stepEl.className = 'step-item';
+        if (isAvailable) {
+            stepEl.classList.add('available');
+        }
 
         stepEl.innerHTML = `
             <div class="step-header">
@@ -212,26 +240,23 @@ function renderSteps() {
                 <div class="step-title-section">
                     <div class="step-name">${step.name}</div>
                     <div class="step-duration">⏱️ ${step.duration} minutes</div>
+                    <div class="step-chain">⏳ Longest remaining chain after this: ${chainTime} minutes</div>
                 </div>
             </div>
             <div class="step-description">${step.description}</div>
             <div class="step-dependencies ${step.dependencies.length > 0 ? 'show' : ''}">
                 ${dependencyText}
             </div>
-            ${!isCompleted ? `
-                <div class="step-actions">
-                    <button class="mark-done-btn" ${!isAvailable ? 'disabled' : ''} data-step-id="${step.id}">
-                        ${isAvailable ? '✓ Mark as Done' : '⏳ Waiting for dependencies'}
-                    </button>
-                </div>
-            ` : ''}
+            <div class="step-actions">
+                <button class="mark-done-btn" ${!isAvailable ? 'disabled' : ''} data-step-id="${step.id}">
+                    ${isAvailable ? '✓ Mark as Done' : '⏳ Waiting for dependencies'}
+                </button>
+            </div>
         `;
 
-        // Add event listener to button if not completed
-        if (!isCompleted) {
-            const btn = stepEl.querySelector('.mark-done-btn');
-            btn.addEventListener('click', () => completeStep(step.id));
-        }
+        // Add event listener to button
+        const btn = stepEl.querySelector('.mark-done-btn');
+        btn.addEventListener('click', () => completeStep(step.id));
 
         stepsList.appendChild(stepEl);
     });
@@ -240,6 +265,42 @@ function renderSteps() {
 function checkDependenciesMet(step) {
     if (step.dependencies.length === 0) return true;
     return step.dependencies.every(depId => completedSteps.has(depId));
+}
+
+// Build helper indexes for current recipe: map of id->step and upwards dependencies
+function buildIndexes() {
+    stepsById = {};
+    upwardsMap = {};
+    if (!currentRecipe) return;
+
+    currentRecipe.steps.forEach(s => {
+        stepsById[s.id] = s;
+        upwardsMap[s.id] = [];
+    });
+
+    currentRecipe.steps.forEach(s => {
+        (s.dependencies || []).forEach(depId => {
+            if (upwardsMap[depId]) upwardsMap[depId].push(s.id);
+        });
+    });
+}
+
+// Compute the longest time chain after completing a step (ignores already-completed upward steps)
+function longestChainAfterCompletion(stepId, memo = {}) {
+    if (memo[stepId] !== undefined) return memo[stepId];
+    const ups = upwardsMap[stepId] || [];
+    if (ups.length === 0) return memo[stepId] = 0;
+    let maxTime = 0;
+    for (const upId of ups) {
+        // skip already-completed upward steps since they won't contribute
+        if (completedSteps.has(upId)) continue;
+        const upStep = stepsById[upId];
+        if (!upStep) continue;
+        const t = upStep.duration + longestChainAfterCompletion(upId, memo);
+        if (t > maxTime) maxTime = t;
+    }
+    memo[stepId] = maxTime;
+    return maxTime;
 }
 
 function completeStep(stepId) {
