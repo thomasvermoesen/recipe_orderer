@@ -1,0 +1,109 @@
+{
+  "name": "Margherita Pizza",
+  "description": "Classic Italian pizza with fresh mozzarella, basil, and tomato",
+  "servings": 2,
+  "prepTime": 15,
+  "cookTime": 25,
+  "ingredients": [
+    {
+      "name": "Pizza Dough",
+      "quantity": 500,
+      "unit": "g"
+    },
+    {
+      "name": "Tomato Sauce",
+      "quantity": 200,
+      "unit": "ml"
+    },
+    {
+      "name": "Fresh Mozzarella",
+      "quantity": 250,
+      "unit": "g"
+    },
+    {
+      "name": "Fresh Basil",
+      "quantity": 10,
+      "unit": "leaves"
+    },
+    {
+      "name": "Olive Oil",
+      "quantity": 30,
+      "unit": "ml"
+    },
+    {
+      "name": "Salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Preheat Oven",
+      "description": "Preheat oven to 475°C (245°C)",
+      "duration": 10,
+      "dependencies": []
+    },
+    {
+      "id": 2,
+      "name": "Prepare Workspace",
+      "description": "Dust work surface with flour, prepare baking sheet with parchment paper",
+      "duration": 2,
+      "dependencies": []
+    },
+    {
+      "id": 3,
+      "name": "Shape Dough",
+      "description": "Stretch or roll pizza dough into desired shape on prepared sheet",
+      "duration": 5,
+      "dependencies": [2]
+    },
+    {
+      "id": 4,
+      "name": "Add Sauce",
+      "description": "Spread tomato sauce evenly over dough, leaving a border for crust",
+      "duration": 2,
+      "dependencies": [3]
+    },
+    {
+      "id": 5,
+      "name": "Add Cheese",
+      "description": "Tear fresh mozzarella and distribute evenly over sauce",
+      "duration": 2,
+      "dependencies": [4]
+    },
+    {
+      "id": 6,
+      "name": "Drizzle Oil",
+      "description": "Drizzle olive oil over pizza and season with salt and pepper",
+      "duration": 1,
+      "dependencies": [5]
+    },
+    {
+      "id": 7,
+      "name": "Bake",
+      "description": "Bake pizza in preheated oven for 12-15 minutes until crust is golden",
+      "duration": 14,
+      "dependencies": [1, 6]
+    },
+    {
+      "id": 8,
+      "name": "Add Basil",
+      "description": "Remove from oven and add fresh basil leaves",
+      "duration": 1,
+      "dependencies": [7]
+    },
+    {
+      "id": 9,
+      "name": "Cool & Serve",
+      "description": "Let cool for 2 minutes, slice, and serve",
+      "duration": 2,
+      "dependencies": [8]
+    }
+  ]
+}

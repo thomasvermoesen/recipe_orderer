@@ -1,0 +1,114 @@
+{
+  "name": "Chocolate Lava Cake",
+  "description": "Rich, decadent chocolate cake with a gooey center",
+  "servings": 4,
+  "prepTime": 15,
+  "cookTime": 15,
+  "ingredients": [
+    {
+      "name": "Dark Chocolate",
+      "quantity": 200,
+      "unit": "g"
+    },
+    {
+      "name": "Butter",
+      "quantity": 150,
+      "unit": "g"
+    },
+    {
+      "name": "Eggs",
+      "quantity": 4,
+      "unit": "whole"
+    },
+    {
+      "name": "Sugar",
+      "quantity": 100,
+      "unit": "g"
+    },
+    {
+      "name": "Flour",
+      "quantity": 30,
+      "unit": "g"
+    },
+    {
+      "name": "Vanilla Extract",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "name": "Powdered Sugar",
+      "quantity": 30,
+      "unit": "g"
+    },
+    {
+      "name": "Butter (for ramekins)",
+      "quantity": 20,
+      "unit": "g"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Preheat Oven",
+      "description": "Preheat oven to 200°C (392°F)",
+      "duration": 10,
+      "dependencies": []
+    },
+    {
+      "id": 2,
+      "name": "Prepare Ramekins",
+      "description": "Butter 4 ramekins and dust with powdered sugar, set aside",
+      "duration": 3,
+      "dependencies": []
+    },
+    {
+      "id": 3,
+      "name": "Melt Chocolate",
+      "description": "Chop chocolate and melt together with butter in double boiler or microwave",
+      "duration": 5,
+      "dependencies": []
+    },
+    {
+      "id": 4,
+      "name": "Beat Eggs",
+      "description": "Beat eggs and sugar together until thick and pale (about 3 minutes)",
+      "duration": 3,
+      "dependencies": []
+    },
+    {
+      "id": 5,
+      "name": "Combine",
+      "description": "Fold melted chocolate into eggs, then gently fold in flour and vanilla",
+      "duration": 2,
+      "dependencies": [3, 4]
+    },
+    {
+      "id": 6,
+      "name": "Fill Ramekins",
+      "description": "Divide batter evenly among prepared ramekins",
+      "duration": 2,
+      "dependencies": [2, 5]
+    },
+    {
+      "id": 7,
+      "name": "Bake",
+      "description": "Bake for 12-14 minutes until edges are firm but center is still soft",
+      "duration": 13,
+      "dependencies": [1, 6]
+    },
+    {
+      "id": 8,
+      "name": "Cool Briefly",
+      "description": "Remove from oven and let cool for 1 minute",
+      "duration": 1,
+      "dependencies": [7]
+    },
+    {
+      "id": 9,
+      "name": "Unmold & Serve",
+      "description": "Run knife around edges, invert onto plates, dust with powdered sugar",
+      "duration": 2,
+      "dependencies": [8]
+    }
+  ]
+}

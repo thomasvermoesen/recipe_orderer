@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Orderer - Follow Recipes Step by Step</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🍳 Recipe Orderer</h1>
+            <p class="tagline">Follow recipes step by step with smart dependency tracking</p>
+        </header>
+
+        <!-- Recipe Selector -->
+        <section class="recipe-selector">
+            <label for="recipe-dropdown">Select a Recipe:</label>
+            <select id="recipe-dropdown">
+                <option value="">-- Choose a recipe --</option>
+                <option value="pasta">Spaghetti Aglio e Olio</option>
+                <option value="pizza">Margherita Pizza</option>
+                <option value="chocolate_cake">Chocolate Lava Cake</option>
+            </select>
+        </section>
+
+        <!-- Main Content (shown when recipe is loaded) -->
+        <main id="main-content" class="main-content hidden">
+            <!-- Recipe Header -->
+            <section class="recipe-header">
+                <div class="recipe-info">
+                    <h2 id="recipe-name"></h2>
+                    <p id="recipe-description" class="recipe-description"></p>
+                    <div class="recipe-meta">
+                        <span id="servings"></span>
+                        <span id="prep-time"></span>
+                        <span id="cook-time"></span>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                    <p id="progress-text" class="progress-text"></p>
+                </div>
+            </section>
+
+            <!-- Ingredients Section -->
+            <section class="ingredients-section">
+                <h3 class="section-title">📋 Ingredients</h3>
+                <button id="toggle-ingredients" class="toggle-btn">Show Ingredients</button>
+                <div id="ingredients-list" class="ingredients-list hidden">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Steps Section -->
+            <section class="steps-section">
+                <h3 class="section-title">👣 Steps</h3>
+                <div id="steps-list" class="steps-list">
+                    <!-- Dynamically populated -->
+                </div>
+            </section>
+
+            <!-- Reset Button -->
+            <section class="footer-actions">
+                <button id="reset-recipe-btn" class="reset-btn">Reset Recipe</button>
+            </section>
+        </main>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="empty-state">
+            <p>👈 Select a recipe from the dropdown above to get started!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

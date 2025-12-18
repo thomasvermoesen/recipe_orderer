@@ -1,0 +1,1 @@
+$env:Path = "C:\Users\Thomas Vermoesen\.local\bin;$env:Path"                        

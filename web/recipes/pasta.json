@@ -1,0 +1,95 @@
+{
+  "name": "Spaghetti Aglio e Olio",
+  "description": "Classic Italian garlic and oil pasta - simple, fast, and delicious",
+  "servings": 4,
+  "prepTime": 5,
+  "cookTime": 20,
+  "ingredients": [
+    {
+      "name": "Spaghetti",
+      "quantity": 400,
+      "unit": "g"
+    },
+    {
+      "name": "Garlic",
+      "quantity": 6,
+      "unit": "cloves"
+    },
+    {
+      "name": "Olive Oil",
+      "quantity": 100,
+      "unit": "ml"
+    },
+    {
+      "name": "Red Chili Pepper",
+      "quantity": 1,
+      "unit": "whole"
+    },
+    {
+      "name": "Salt",
+      "quantity": 1,
+      "unit": "tsp"
+    },
+    {
+      "name": "Black Pepper",
+      "quantity": 0.5,
+      "unit": "tsp"
+    },
+    {
+      "name": "Fresh Parsley",
+      "quantity": 2,
+      "unit": "tbsp"
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Boil Water",
+      "description": "Bring a large pot of salted water to a boil",
+      "duration": 10,
+      "dependencies": []
+    },
+    {
+      "id": 2,
+      "name": "Prepare Garlic",
+      "description": "Mince the garlic cloves and slice the chili pepper",
+      "duration": 5,
+      "dependencies": []
+    },
+    {
+      "id": 3,
+      "name": "Cook Pasta",
+      "description": "Add spaghetti to boiling water and cook until al dente (about 9 minutes)",
+      "duration": 9,
+      "dependencies": [1]
+    },
+    {
+      "id": 4,
+      "name": "Infuse Oil",
+      "description": "Heat olive oil in a pan over medium heat. Add garlic and chili pepper, cook until fragrant (about 3 minutes)",
+      "duration": 3,
+      "dependencies": [2]
+    },
+    {
+      "id": 5,
+      "name": "Combine",
+      "description": "Drain pasta (reserve 1 cup pasta water), add to oil pan with garlic",
+      "duration": 2,
+      "dependencies": [3, 4]
+    },
+    {
+      "id": 6,
+      "name": "Finish",
+      "description": "Toss pasta with oil, add pasta water as needed. Season with salt and pepper",
+      "duration": 2,
+      "dependencies": [5]
+    },
+    {
+      "id": 7,
+      "name": "Serve",
+      "description": "Plate pasta, garnish with fresh parsley and more pepper",
+      "duration": 1,
+      "dependencies": [6]
+    }
+  ]
+}
