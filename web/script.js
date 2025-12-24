@@ -334,11 +334,11 @@ function renderSteps() {
         }
     });
     
-    // Sort available steps by longestChainAfterCompletion descending (longest first)
+    // Sort available steps by total time-to-completion (duration + longestChainAfterCompletion) descending
     availableSteps.sort((a, b) => {
-        const chainA = longestChainAfterCompletion(a.id);
-        const chainB = longestChainAfterCompletion(b.id);
-        return chainB - chainA;
+        const totalA = a.duration + longestChainAfterCompletion(a.id);
+        const totalB = b.duration + longestChainAfterCompletion(b.id);
+        return totalB - totalA;
     });
     
     // Render available steps first, then unavailable
@@ -349,6 +349,7 @@ function renderSteps() {
         
         // Compute longest remaining time-chain after this step is completed
         const chainTime = longestChainAfterCompletion(step.id);
+        const totalTime = step.duration + chainTime;
 
         const dependencyText = step.dependencies.length > 0 
             ? `Requires completion of: Step ${step.dependencies.join(', Step ')}`
@@ -366,7 +367,7 @@ function renderSteps() {
                 <div class="step-title-section">
                     <div class="step-name">${step.name}</div>
                     <div class="step-duration">⏱️ ${step.duration} minutes</div>
-                    <div class="step-chain">⏳ Longest remaining chain after this: ${chainTime} minutes</div>
+                    <div class="step-chain">⏳ Total time-to-completion: ${totalTime} minutes (${step.duration} + ${chainTime})</div>
                 </div>
             </div>
             <div class="step-description">${step.description}</div>
