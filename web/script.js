@@ -1,83 +1,205 @@
 // Recipes data
 const RECIPES = {
-    pasta: {
-        "name": "Spaghetti Aglio e Olio",
-        "description": "Classic Italian garlic and oil pasta - simple, fast, and delicious",
+    master: {
+        "name": "Holiday Party Master Recipe",
+        "description": "An elegant multi-course collection combining festive cocktails, layered desserts, and frozen treats with shared preparation steps",
+        "servings": 8,
+        "prepTime": 45,
+        "cookTime": 50,
+        "waitTime": 150,
+        "ingredients": [
+            {"name": "Gin", "quantity": 0, "unit": ""},
+            {"name": "Graanjenever", "quantity": 0, "unit": ""},
+            {"name": "Fresh apple juice", "quantity": 0, "unit": "ml"},
+            {"name": "Lemon juice", "quantity": 0, "unit": "ml"},
+            {"name": "Honey liqueur", "quantity": 0, "unit": "ml"},
+            {"name": "Sugar syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Egg white", "quantity": 0, "unit": "ml"},
+            {"name": "Whiskey", "quantity": 0, "unit": "ml"},
+            {"name": "Armagnac", "quantity": 0, "unit": "ml"},
+            {"name": "Bitters", "quantity": 0, "unit": "dashes"},
+            {"name": "White rum", "quantity": 0, "unit": "ml"},
+            {"name": "Vanilla vodka", "quantity": 0, "unit": "ml"},
+            {"name": "Cinnamon syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Tonic", "quantity": 0, "unit": "ml"},
+            {"name": "Ginger ale", "quantity": 0, "unit": "ml"},
+            {"name": "Vanilla syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Vodka", "quantity": 0, "unit": "ml"},
+            {"name": "Blue curaçao", "quantity": 0, "unit": "ml"},
+            {"name": "Porto", "quantity": 0, "unit": "ml"},
+            {"name": "Coconut cream", "quantity": 0, "unit": "ml"},
+            {"name": "Pineapple juice", "quantity": 0, "unit": "ml"},
+            {"name": "Lime juice", "quantity": 0, "unit": "ml"},
+            {"name": "Grenadine", "quantity": 0, "unit": "ml"},
+            {"name": "Liquor 43", "quantity": 0, "unit": "ml"},
+            {"name": "Tequila", "quantity": 0, "unit": "ml"},
+            {"name": "Blueberry syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Cranberry juice", "quantity": 0, "unit": "ml"},
+            {"name": "Pomegranate seeds", "quantity": 0, "unit": "g"},
+            {"name": "Pecans, chopped", "quantity": 1, "unit": "cup"},
+            {"name": "Granulated sugar", "quantity": 3, "unit": "tbsp"},
+            {"name": "Unsalted butter, melted", "quantity": 0.5, "unit": "cup"},
+            {"name": "All-purpose flour", "quantity": 1, "unit": "cup"},
+            {"name": "Cream cheese", "quantity": 8, "unit": "oz"},
+            {"name": "Powdered sugar", "quantity": 1, "unit": "cup"},
+            {"name": "Cool whip or whipped cream", "quantity": 2, "unit": "cups"},
+            {"name": "Instant vanilla pudding", "quantity": 5.1, "unit": "oz"},
+            {"name": "Milk", "quantity": 4, "unit": "cups"},
+            {"name": "Instant chocolate pudding", "quantity": 5.1, "unit": "oz"},
+            {"name": "Shaved chocolate", "quantity": 1, "unit": "optional"},
+            {"name": "Chocolate ice cream", "quantity": 0.5, "unit": "cup"},
+            {"name": "Pistachio ice cream", "quantity": 0.5, "unit": "cup"},
+            {"name": "Maraschino cherries", "quantity": 2, "unit": "whole"},
+            {"name": "Chocolate wafer cookies, finely pulsed", "quantity": 5, "unit": "whole"},
+            {"name": "Coconut oil, melted", "quantity": 2.5, "unit": "tsp"},
+            {"name": "Semisweet chocolate (61% cacao), chopped", "quantity": 2, "unit": "oz"}
+        ],
+        "steps": [
+            {"id": 1, "name": "Prepare Glassware & Workspace", "description": "Chill all glasses. Prepare workspace with ice, tools, and ingredients organized. Have domed bowl ready for tartufo, baking dish ready for sex in a pan.", "duration": 10, "dependencies": []},
+            {"id": 2, "name": "Prepare Crushed Ice", "description": "Crush ice finely for cocktails and tartufo coating. Keep ready.", "duration": 5, "dependencies": []},
+            {"id": 3, "name": "Preheat Oven", "description": "Preheat oven to 180°C for sex in a pan crust", "duration": 5, "dependencies": []},
+            {"id": 4, "name": "DESSERT TRACK: Start Sex in a Pan Crust", "description": "Mix pecans, sugar, melted butter, and flour. Press into baking dish", "duration": 8, "dependencies": [1, 3]},
+            {"id": 5, "name": "DESSERT TRACK: Bake Crust", "description": "Bake crust for 20 minutes until lightly golden", "duration": 20, "dependencies": [4]},
+            {"id": 6, "name": "FROZEN TRACK: Start Tartufo Bowl Setup", "description": "Line domed glass bowl with plastic wrap, leaving 4-inch overhang", "duration": 5, "dependencies": [1]},
+            {"id": 7, "name": "FROZEN TRACK: Layer Ice Cream & Cherry", "description": "Pack chocolate and pistachio ice cream on each side with maraschino cherry center", "duration": 15, "dependencies": [6]},
+            {"id": 8, "name": "FROZEN TRACK: First Long Freeze", "description": "Wrap and freeze tartufo for at least 2 hours (can do overnight)", "duration": 120, "dependencies": [7]},
+            {"id": 9, "name": "DESSERT TRACK: Cool Crust", "description": "Remove crust from oven and let cool completely", "duration": 15, "dependencies": [5]},
+            {"id": 10, "name": "DESSERT TRACK: Prepare Puddings", "description": "Prepare both vanilla and chocolate puddings with 2 cups milk each for firmer consistency", "duration": 10, "dependencies": []},
+            {"id": 11, "name": "DESSERT TRACK: Make Cream Cheese Layer", "description": "Mix cream cheese, powdered sugar, and 1 cup whipped cream until fluffy", "duration": 5, "dependencies": []},
+            {"id": 12, "name": "DESSERT TRACK: Layer & Assemble", "description": "Spread cream cheese over crust, then layer vanilla pudding, chocolate pudding, and top with whipped cream", "duration": 10, "dependencies": [9, 10, 11]},
+            {"id": 13, "name": "DESSERT TRACK: Refrigerate Sex in a Pan", "description": "Refrigerate assembled dessert for at least 2 hours until set", "duration": 120, "dependencies": [12]},
+            {"id": 14, "name": "FROZEN TRACK: Prepare Cookie Coating", "description": "Mix finely pulsed chocolate wafer cookie crumbs with 1 teaspoon coconut oil", "duration": 5, "dependencies": []},
+            {"id": 15, "name": "FROZEN TRACK: Second Freeze & Cookie Coat", "description": "After first freeze, press cookie crumb coating onto tartufo, rewrap and freeze 15 minutes", "duration": 15, "dependencies": [8, 14]},
+            {"id": 16, "name": "COCKTAIL TRACK: Make Cocktails (Phase 1)", "description": "Make Winter Orchard Sour, Golden Apple Old Fashioned, Apple Pie Highball, Snowy Apple Spritz - all requiring step 1 preparation", "duration": 30, "dependencies": [1, 2]},
+            {"id": 17, "name": "FROZEN TRACK: Melt Chocolate for Coating", "description": "Place chopped chocolate in bowl over simmering water, melt, stir in 1.5 tsp coconut oil", "duration": 10, "dependencies": []},
+            {"id": 18, "name": "FROZEN TRACK: Unmold & Coat Tartufo", "description": "Invert tartufo onto rack, remove plastic, pour melted chocolate starting from center outward", "duration": 8, "dependencies": [15, 17]},
+            {"id": 19, "name": "FROZEN TRACK: Final Freeze Tartufo", "description": "Freeze on rack for at least 5 minutes to harden chocolate", "duration": 5, "dependencies": [18]},
+            {"id": 20, "name": "COCKTAIL TRACK: Make Cocktails (Phase 2)", "description": "Make Apple Crumble Shot, Arctic Star Martini, Golden Armagnac Old Fashioned, Midnight Blue Velvet - all requiring step 1", "duration": 25, "dependencies": [1]},
+            {"id": 21, "name": "COCKTAIL TRACK: Make Cocktails (Phase 3 - Crushed Ice)", "description": "Make Caribbean Snowstorm and Frosted Forest using prepared crushed ice", "duration": 12, "dependencies": [2]},
+            {"id": 22, "name": "COCKTAIL TRACK: Make Remaining Cocktails", "description": "Make Porto Royale, Santa's Sleigh Drop, Blue Reindeer, Honey Fire Bullet, Winter Spice Fizz, and Ginger Cranberry Sparkle", "duration": 20, "dependencies": [1]},
+            {"id": 23, "name": "PRESENTATION: Plate & Serve Everything", "description": "Plate tartufo with thin spatula, cut and serve sex in a pan, arrange cocktails - a complete holiday spread!", "duration": 10, "dependencies": [13, 19, 16, 20, 21, 22]}
+        ]
+    },
+    cocktails: {
+        "name": "Holiday Cocktail Master Recipe",
+        "description": "A collection of festive cocktails, shots and preparation steps for holiday gatherings.",
         "servings": 4,
-        "prepTime": 5,
+        "prepTime": 15,
+        "cookTime": 0,
+        "ingredients": [
+            {"name": "Gin", "quantity": 0, "unit": ""},
+            {"name": "Graanjenever", "quantity": 0, "unit": ""},
+            {"name": "Fresh apple juice", "quantity": 0, "unit": "ml"},
+            {"name": "Lemon juice", "quantity": 0, "unit": "ml"},
+            {"name": "Honey liqueur", "quantity": 0, "unit": "ml"},
+            {"name": "Sugar syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Egg white", "quantity": 0, "unit": "ml"},
+            {"name": "Whiskey", "quantity": 0, "unit": "ml"},
+            {"name": "Armagnac", "quantity": 0, "unit": "ml"},
+            {"name": "Bitters", "quantity": 0, "unit": "dashes"},
+            {"name": "White rum", "quantity": 0, "unit": "ml"},
+            {"name": "Vanilla vodka", "quantity": 0, "unit": "ml"},
+            {"name": "Cinnamon syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Tonic", "quantity": 0, "unit": "ml"},
+            {"name": "Ginger ale", "quantity": 0, "unit": "ml"},
+            {"name": "Vanilla syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Vodka", "quantity": 0, "unit": "ml"},
+            {"name": "Blue curaçao", "quantity": 0, "unit": "ml"},
+            {"name": "Porto", "quantity": 0, "unit": "ml"},
+            {"name": "Coconut cream", "quantity": 0, "unit": "ml"},
+            {"name": "Pineapple juice", "quantity": 0, "unit": "ml"},
+            {"name": "Lime juice", "quantity": 0, "unit": "ml"},
+            {"name": "Grenadine", "quantity": 0, "unit": "ml"},
+            {"name": "Liquor 43", "quantity": 0, "unit": "ml"},
+            {"name": "Tequila", "quantity": 0, "unit": "ml"},
+            {"name": "Blueberry syrup", "quantity": 0, "unit": "ml"},
+            {"name": "Cranberry juice", "quantity": 0, "unit": "ml"},
+            {"name": "Pomegranate seeds", "quantity": 0, "unit": "g"}
+        ],
+        "steps": [
+            {"id": 1, "name": "Prepare Glassware", "description": "Chill glasses in freezer or fill with ice water while preparing drinks. For glasses requiring rims (sugar, cinnamon), moisten rim with lime/lemon juice first. Prepare all coupe glasses, old fashioned glasses, highballs, wine glasses, tumblers, and shot glasses.", "duration": 5, "dependencies": []},
+            {"id": 2, "name": "Prepare Crushed Ice", "description": "Crush ice finely using ice crusher or blender for drinks requiring crushed ice (Frosted Forest, Caribbean Snowstorm). Have ready for immediate use.", "duration": 5, "dependencies": []},
+            {"id": 3, "name": "Winter Orchard Sour", "description": "Dry shake egg white first without ice for 10 seconds to create foam. Then add ice and shake all ingredients vigorously for 10-12 seconds. Strain into chilled coupe glass. Garnish with cinnamon powder and optional dried apple slice.", "duration": 8, "dependencies": [1]},
+            {"id": 4, "name": "Golden Apple Old Fashioned", "description": "Fill mixing glass with ice. Add whiskey/armagnac, apple juice, sugar syrup, and bitters. Stir for 15-20 seconds until well chilled. Strain over large ice cube in old fashioned glass. Express orange zest over drink and add mini cinnamon stick.", "duration": 6, "dependencies": [1]},
+            {"id": 5, "name": "Apple Pie Highball", "description": "Fill highball glass with ice. Add rum/vodka, apple juice, and cinnamon syrup in order. Stir gently to combine. Top with tonic or ginger ale. Garnish with apple fan and cinnamon sugar rim.", "duration": 4, "dependencies": [1]},
+            {"id": 6, "name": "Snowy Apple Spritz", "description": "Fill wine glass with ice. Add apple juice, lemon juice, and vanilla syrup. Stir gently. Top with ginger beer. Garnish with thin apple slice and star anise.", "duration": 4, "dependencies": [1]},
+            {"id": 7, "name": "Apple Crumble Shot", "description": "Shake honey liqueur, apple juice, and cream with ice for 10-12 seconds. Strain into shot glass. Add nutmeg sprinkle and cinnamon sugar rim.", "duration": 3, "dependencies": [1]},
+            {"id": 8, "name": "Arctic Star Martini", "description": "Add gin, passion fruit jenever, lemon juice, and vanilla syrup to shaker with ice. Shake vigorously for 10-12 seconds. Strain into chilled coupe. Garnish with half passion fruit and serve with mini sparkler for show.", "duration": 8, "dependencies": [1]},
+            {"id": 9, "name": "Golden Armagnac Old Fashioned", "description": "Stir armagnac, sugar syrup, and bitters with ice in mixing glass for 15-20 seconds. Strain over large ice cube in old fashioned glass. Garnish with orange zest and edible gold powder.", "duration": 6, "dependencies": [1]},
+            {"id": 10, "name": "Midnight Blue Velvet", "description": "Dry shake vodka, blue curaçao, lemon juice, sugar syrup, and egg white for 10 seconds without ice. Add ice and shake vigorously for 10-12 seconds. Strain into chilled coupe. Top with silver sugar pearls on foam.", "duration": 8, "dependencies": [1]},
+            {"id": 11, "name": "Porto Royale", "description": "Fill wine glass with ice. Add porto, gin, lemon juice, and sugar syrup. Stir gently. Top with tonic. Garnish with rosemary sprig and dried orange slice.", "duration": 4, "dependencies": [1]},
+            {"id": 12, "name": "Caribbean Snowstorm", "description": "Shake white rum, coconut cream, pineapple juice, and lime juice with ice for 10-12 seconds. Strain into tumbler filled with crushed ice. Top with thick layer of coconut flakes.", "duration": 6, "dependencies": [1, 2]},
+            {"id": 13, "name": "Santa's Sleigh Drop", "description": "Layer shot in shot glass: pour grenadine first. Slowly pour Liquor 43 over back of bar spoon. Repeat with vanilla vodka. Creates three distinct red-gold layers.", "duration": 3, "dependencies": [1]},
+            {"id": 14, "name": "Blue Reindeer", "description": "Shake tequila, blue curaçao, and lime juice with ice for 10-12 seconds. Strain into shot glass. Garnish with mini lime wheel.", "duration": 3, "dependencies": [1]},
+            {"id": 15, "name": "Honey Fire Bullet", "description": "Shake honey liqueur, whiskey, and lemon juice with ice for 10-12 seconds. Strain into shot glass. Add cinnamon sugar rim.", "duration": 3, "dependencies": [1]},
+            {"id": 16, "name": "Winter Spice Fizz", "description": "Fill highball glass with ice. Add lime juice and cinnamon syrup. Stir gently. Top with ginger ale. Garnish with flambéed rosemary sprig for aroma and star anise.", "duration": 4, "dependencies": [1]},
+            {"id": 17, "name": "Frosted Forest", "description": "Fill highball glass with crushed ice. Add blueberry syrup and lemon juice. Top with tonic. Stir lightly. Garnish with sugar rim and blue glitter for festive effect.", "duration": 4, "dependencies": [1, 2]},
+            {"id": 18, "name": "Ginger Cranberry Sparkle", "description": "Shake cranberry juice, lemon juice, and sugar syrup with ice for 10-12 seconds. Strain into highball or coupe with ice. Top with ginger ale. Garnish with flambéed rosemary and pomegranate seeds.", "duration": 5, "dependencies": [1]}
+        ]
+    },
+    sex_in_a_pan: {
+        "name": "Sex in a Pan",
+        "description": "A decadent layered dessert with pecan crust, cream cheese, vanilla pudding, chocolate pudding, and whipped cream",
+        "servings": 12,
+        "prepTime": 30,
         "cookTime": 20,
         "ingredients": [
-            {"name": "Spaghetti", "quantity": 400, "unit": "g"},
-            {"name": "Garlic", "quantity": 6, "unit": "cloves"},
-            {"name": "Olive Oil", "quantity": 100, "unit": "ml"},
-            {"name": "Red Chili Pepper", "quantity": 1, "unit": "whole"},
-            {"name": "Salt", "quantity": 1, "unit": "tsp"},
-            {"name": "Black Pepper", "quantity": 0.5, "unit": "tsp"},
-            {"name": "Fresh Parsley", "quantity": 2, "unit": "tbsp"}
+            {"name": "Pecans, chopped", "quantity": 1, "unit": "cup"},
+            {"name": "Granulated sugar", "quantity": 3, "unit": "tbsp"},
+            {"name": "Unsalted butter, melted", "quantity": 0.5, "unit": "cup"},
+            {"name": "All-purpose flour", "quantity": 1, "unit": "cup"},
+            {"name": "Cream cheese", "quantity": 8, "unit": "oz"},
+            {"name": "Powdered sugar", "quantity": 1, "unit": "cup"},
+            {"name": "Cool whip or whipped cream", "quantity": 2, "unit": "cups"},
+            {"name": "Instant vanilla pudding", "quantity": 5.1, "unit": "oz"},
+            {"name": "Milk", "quantity": 4, "unit": "cups"},
+            {"name": "Instant chocolate pudding", "quantity": 5.1, "unit": "oz"},
+            {"name": "Shaved chocolate", "quantity": 1, "unit": "optional"}
         ],
         "steps": [
-            {"id": 1, "name": "Boil Water", "description": "Bring a large pot of salted water to a boil", "duration": 10, "dependencies": []},
-            {"id": 2, "name": "Prepare Garlic", "description": "Mince the garlic cloves and slice the chili pepper", "duration": 5, "dependencies": []},
-            {"id": 3, "name": "Cook Pasta", "description": "Add spaghetti to boiling water and cook until al dente (about 9 minutes)", "duration": 9, "dependencies": [1]},
-            {"id": 4, "name": "Infuse Oil", "description": "Heat olive oil in a pan over medium heat. Add garlic and chili pepper, cook until fragrant (about 3 minutes)", "duration": 3, "dependencies": [2]},
-            {"id": 5, "name": "Combine", "description": "Drain pasta (reserve 1 cup pasta water), add to oil pan with garlic", "duration": 2, "dependencies": [3, 4]},
-            {"id": 6, "name": "Finish", "description": "Toss pasta with oil, add pasta water as needed. Season with salt and pepper", "duration": 2, "dependencies": [5]},
-            {"id": 7, "name": "Serve", "description": "Plate pasta, garnish with fresh parsley and more pepper", "duration": 1, "dependencies": [6]}
+            {"id": 1, "name": "Preheat Oven", "description": "Preheat oven to 180°C", "duration": 5, "dependencies": []},
+            {"id": 2, "name": "Prepare Baking Dish", "description": "Spray a 9x13 inch baking dish with cooking spray", "duration": 2, "dependencies": []},
+            {"id": 3, "name": "Mix Crust", "description": "In a mixer combine pecans, granulated sugar, melted butter, and flour", "duration": 5, "dependencies": []},
+            {"id": 4, "name": "Press Crust", "description": "Press the crust mixture into the prepared baking dish", "duration": 3, "dependencies": [2, 3]},
+            {"id": 5, "name": "Bake Crust", "description": "Bake crust for about 20 minutes until lightly golden", "duration": 20, "dependencies": [1, 4]},
+            {"id": 6, "name": "Cool Crust", "description": "Let the crust cool completely", "duration": 15, "dependencies": [5]},
+            {"id": 7, "name": "Prepare Vanilla Pudding", "description": "Prepare vanilla pudding with 2 cups milk according to package instructions for firmer consistency", "duration": 5, "dependencies": []},
+            {"id": 8, "name": "Prepare Chocolate Pudding", "description": "Prepare chocolate pudding with 2 cups milk according to package instructions for firmer consistency", "duration": 5, "dependencies": []},
+            {"id": 9, "name": "Mix Cream Cheese Layer", "description": "In mixer combine cream cheese, powdered sugar, and 1 cup whipped cream. Mix until light and fluffy", "duration": 5, "dependencies": []},
+            {"id": 10, "name": "Spread Cream Cheese", "description": "Spread cream cheese mixture evenly over cooled crust", "duration": 5, "dependencies": [6, 9]},
+            {"id": 11, "name": "Layer Vanilla Pudding", "description": "Spread vanilla pudding over cream cheese layer", "duration": 3, "dependencies": [7, 10]},
+            {"id": 12, "name": "Layer Chocolate Pudding", "description": "Spread chocolate pudding over vanilla pudding layer", "duration": 3, "dependencies": [8, 11]},
+            {"id": 13, "name": "Top with Whipped Cream", "description": "Spread remaining whipped cream as the final layer. Top with shaved chocolate if desired", "duration": 5, "dependencies": [12]},
+            {"id": 14, "name": "Refrigerate", "description": "Refrigerate for at least 2 hours until set before serving", "duration": 120, "dependencies": [13]}
         ]
     },
-    pizza: {
-        "name": "Margherita Pizza",
-        "description": "Classic Italian pizza with fresh mozzarella, basil, and tomato",
+    tartufo: {
+        "name": "Tartufo",
+        "description": "An elegant Italian ice cream dessert with chocolate and pistachio layers, maraschino cherry center, and chocolate coating",
         "servings": 2,
-        "prepTime": 15,
-        "cookTime": 25,
+        "prepTime": 20,
+        "cookTime": 0,
         "ingredients": [
-            {"name": "Pizza Dough", "quantity": 500, "unit": "g"},
-            {"name": "Tomato Sauce", "quantity": 200, "unit": "ml"},
-            {"name": "Fresh Mozzarella", "quantity": 250, "unit": "g"},
-            {"name": "Fresh Basil", "quantity": 10, "unit": "leaves"},
-            {"name": "Olive Oil", "quantity": 30, "unit": "ml"},
-            {"name": "Salt", "quantity": 1, "unit": "tsp"},
-            {"name": "Black Pepper", "quantity": 0.5, "unit": "tsp"}
+            {"name": "Chocolate ice cream", "quantity": 0.5, "unit": "cup"},
+            {"name": "Pistachio ice cream", "quantity": 0.5, "unit": "cup"},
+            {"name": "Maraschino cherries", "quantity": 2, "unit": "whole"},
+            {"name": "Chocolate wafer cookies, finely pulsed", "quantity": 5, "unit": "whole"},
+            {"name": "Coconut oil, melted", "quantity": 2.5, "unit": "tsp"},
+            {"name": "Semisweet chocolate (61% cacao), chopped", "quantity": 2, "unit": "oz"}
         ],
         "steps": [
-            {"id": 1, "name": "Preheat Oven", "description": "Preheat oven to 475°C (245°C)", "duration": 10, "dependencies": []},
-            {"id": 2, "name": "Prepare Workspace", "description": "Dust work surface with flour, prepare baking sheet with parchment paper", "duration": 2, "dependencies": []},
-            {"id": 3, "name": "Shape Dough", "description": "Stretch or roll pizza dough into desired shape on prepared sheet", "duration": 5, "dependencies": [2]},
-            {"id": 4, "name": "Add Sauce", "description": "Spread tomato sauce evenly over dough, leaving a border for crust", "duration": 2, "dependencies": [3]},
-            {"id": 5, "name": "Add Cheese", "description": "Tear fresh mozzarella and distribute evenly over sauce", "duration": 2, "dependencies": [4]},
-            {"id": 6, "name": "Drizzle Oil", "description": "Drizzle olive oil over pizza and season with salt and pepper", "duration": 1, "dependencies": [5]},
-            {"id": 7, "name": "Bake", "description": "Bake pizza in preheated oven for 12-15 minutes until crust is golden", "duration": 14, "dependencies": [1, 6]},
-            {"id": 8, "name": "Add Basil", "description": "Remove from oven and add fresh basil leaves", "duration": 1, "dependencies": [7]},
-            {"id": 9, "name": "Cool & Serve", "description": "Let cool for 2 minutes, slice, and serve", "duration": 2, "dependencies": [8]}
-        ]
-    },
-    chocolate_cake: {
-        "name": "Chocolate Lava Cake",
-        "description": "Rich, decadent chocolate cake with a gooey center",
-        "servings": 4,
-        "prepTime": 15,
-        "cookTime": 15,
-        "ingredients": [
-            {"name": "Dark Chocolate", "quantity": 200, "unit": "g"},
-            {"name": "Butter", "quantity": 150, "unit": "g"},
-            {"name": "Eggs", "quantity": 4, "unit": "whole"},
-            {"name": "Sugar", "quantity": 100, "unit": "g"},
-            {"name": "Flour", "quantity": 30, "unit": "g"},
-            {"name": "Vanilla Extract", "quantity": 1, "unit": "tsp"},
-            {"name": "Powdered Sugar", "quantity": 30, "unit": "g"},
-            {"name": "Butter (for ramekins)", "quantity": 20, "unit": "g"}
-        ],
-        "steps": [
-            {"id": 1, "name": "Preheat Oven", "description": "Preheat oven to 200°C (392°F)", "duration": 10, "dependencies": []},
-            {"id": 2, "name": "Prepare Ramekins", "description": "Butter 4 ramekins and dust with powdered sugar, set aside", "duration": 3, "dependencies": []},
-            {"id": 3, "name": "Melt Chocolate", "description": "Chop chocolate and melt together with butter in double boiler or microwave", "duration": 5, "dependencies": []},
-            {"id": 4, "name": "Beat Eggs", "description": "Beat eggs and sugar together until thick and pale (about 3 minutes)", "duration": 3, "dependencies": []},
-            {"id": 5, "name": "Combine", "description": "Fold melted chocolate into eggs, then gently fold in flour and vanilla", "duration": 2, "dependencies": [3, 4]},
-            {"id": 6, "name": "Fill Ramekins", "description": "Divide batter evenly among prepared ramekins", "duration": 2, "dependencies": [2, 5]},
-            {"id": 7, "name": "Bake", "description": "Bake for 12-14 minutes until edges are firm but center is still soft", "duration": 13, "dependencies": [1, 6]},
-            {"id": 8, "name": "Cool Briefly", "description": "Remove from oven and let cool for 1 minute", "duration": 1, "dependencies": [7]},
-            {"id": 9, "name": "Unmold & Serve", "description": "Run knife around edges, invert onto plates, dust with powdered sugar", "duration": 2, "dependencies": [8]}
+            {"id": 1, "name": "Prepare Bowl", "description": "Line a small domed glass bowl (4.5-inch-diameter) with plastic wrap, leaving 4-inch overhang on all sides", "duration": 5, "dependencies": []},
+            {"id": 2, "name": "Layer Ice Cream", "description": "Pack chocolate ice cream into one side and pistachio into the other side of the bowl", "duration": 10, "dependencies": [1]},
+            {"id": 3, "name": "Add Cherry Centers", "description": "Make indentation in each ice cream flavor and place a maraschino cherry in each. Cover cherries with more ice cream", "duration": 5, "dependencies": [2]},
+            {"id": 4, "name": "First Freeze", "description": "Wrap in plastic and freeze until firm, at least 2 hours or preferably overnight", "duration": 180, "dependencies": [3]},
+            {"id": 5, "name": "Prepare Cookie Crumb Coating", "description": "Mix together finely pulsed chocolate wafer cookie crumbs with 1 teaspoon coconut oil", "duration": 5, "dependencies": []},
+            {"id": 6, "name": "Apply Cookie Coating", "description": "Fold back plastic and press crumb mixture onto ice cream. Smooth with offset spatula and rewrap", "duration": 5, "dependencies": [4, 5]},
+            {"id": 7, "name": "Second Freeze", "description": "Freeze at least 15 minutes", "duration": 15, "dependencies": [6]},
+            {"id": 8, "name": "Melt Chocolate", "description": "Place chopped semisweet chocolate in heatproof bowl over simmering water. Stir until melted then remove from heat. Stir in remaining 1.5 teaspoons coconut oil", "duration": 10, "dependencies": []},
+            {"id": 9, "name": "Unmold Tartufo", "description": "Fold back plastic from ice cream. Invert bowl onto wire rack over baking sheet. Wipe outside of bowl with hot cloth to loosen. Lift bowl and remove plastic completely", "duration": 5, "dependencies": [7]},
+            {"id": 10, "name": "Coat with Chocolate", "description": "Pour melted chocolate over top starting in center and working outward in one continuous stream", "duration": 3, "dependencies": [8, 9]},
+            {"id": 11, "name": "Final Freeze", "description": "Freeze tartufo on rack to harden, at least 5 minutes", "duration": 5, "dependencies": [10]},
+            {"id": 12, "name": "Serve", "description": "Transfer to plate with thin metal spatula. If it sticks, dip spatula in hot water and wipe dry", "duration": 5, "dependencies": [11]}
         ]
     }
 };
@@ -99,6 +221,7 @@ const recipeDescription = document.getElementById('recipe-description');
 const servings = document.getElementById('servings');
 const prepTime = document.getElementById('prep-time');
 const cookTime = document.getElementById('cook-time');
+const waitTime = document.getElementById('wait-time');
 const ingredientsList = document.getElementById('ingredients-list');
 const stepsList = document.getElementById('steps-list');
 const toggleIngredientsBtn = document.getElementById('toggle-ingredients');
@@ -165,6 +288,9 @@ function renderRecipe() {
     servings.textContent = `👥 Servings: ${currentRecipe.servings}`;
     prepTime.textContent = `⏱️ Prep: ${currentRecipe.prepTime} min`;
     cookTime.textContent = `🔥 Cook: ${currentRecipe.cookTime} min`;
+    if (currentRecipe.waitTime) {
+        waitTime.textContent = `⏳ Wait: ${currentRecipe.waitTime} min`;
+    }
 
     // Ingredients
     renderIngredients();

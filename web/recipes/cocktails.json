@@ -1,0 +1,261 @@
+{
+  "name": "Holiday Cocktail Master Recipe",
+  "description": "A collection of festive cocktails, shots and preparation steps for holiday gatherings.",
+  "servings": 4,
+  "prepTime": 15,
+  "cookTime": 0,
+  "ingredients": [
+    {"name": "Gin", "quantity": 0, "unit": ""},
+    {"name": "Graanjenever", "quantity": 0, "unit": ""},
+    {"name": "Fresh apple juice", "quantity": 0, "unit": "ml"},
+    {"name": "Lemon juice", "quantity": 0, "unit": "ml"},
+    {"name": "Honey liqueur", "quantity": 0, "unit": "ml"},
+    {"name": "Sugar syrup", "quantity": 0, "unit": "ml"},
+    {"name": "Egg white", "quantity": 0, "unit": "ml"},
+    {"name": "Whiskey", "quantity": 0, "unit": "ml"},
+    {"name": "Armagnac", "quantity": 0, "unit": "ml"},
+    {"name": "Bitters", "quantity": 0, "unit": "dashes"},
+    {"name": "White rum", "quantity": 0, "unit": "ml"},
+    {"name": "Vanilla vodka", "quantity": 0, "unit": "ml"},
+    {"name": "Cinnamon syrup", "quantity": 0, "unit": "ml"},
+    {"name": "Tonic", "quantity": 0, "unit": "ml"},
+    {"name": "Ginger ale", "quantity": 0, "unit": "ml"},
+    {"name": "Vanilla syrup", "quantity": 0, "unit": "ml"},
+    {"name": "Vodka", "quantity": 0, "unit": "ml"},
+    {"name": "Blue curaçao", "quantity": 0, "unit": "ml"},
+    {"name": "Porto", "quantity": 0, "unit": "ml"},
+    {"name": "Coconut cream", "quantity": 0, "unit": "ml"},
+    {"name": "Pineapple juice", "quantity": 0, "unit": "ml"},
+    {"name": "Lime juice", "quantity": 0, "unit": "ml"},
+    {"name": "Grenadine", "quantity": 0, "unit": "ml"},
+    {"name": "Liquor 43", "quantity": 0, "unit": "ml"},
+    {"name": "Tequila", "quantity": 0, "unit": "ml"},
+    {"name": "Blueberry syrup", "quantity": 0, "unit": "ml"},
+    {"name": "Cranberry juice", "quantity": 0, "unit": "ml"},
+    {"name": "Pomegranate seeds", "quantity": 0, "unit": "g"}
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "name": "Prepare Glassware",
+      "description": "Chill glasses in freezer or fill with ice water while preparing drinks. For glasses requiring rims (sugar, cinnamon), moisten rim with lime/lemon juice first. Prepare all coupe glasses, old fashioned glasses, highballs, wine glasses, tumblers, and shot glasses.",
+      "duration": 5,
+      "ingredients": [],
+      "dependencies": []
+    },
+    {
+      "id": 2,
+      "name": "Prepare Crushed Ice",
+      "description": "Crush ice finely using ice crusher or blender for drinks requiring crushed ice (Frosted Forest, Caribbean Snowstorm). Have ready for immediate use.",
+      "duration": 5,
+      "ingredients": [],
+      "dependencies": []
+    },
+    {
+      "id": 3,
+      "name": "Winter Orchard Sour",
+      "description": "Dry shake egg white first without ice for 10 seconds to create foam. Then add ice and shake all ingredients vigorously for 10-12 seconds. Strain into chilled coupe glass. Garnish with cinnamon powder and optional dried apple slice.",
+      "duration": 8,
+      "ingredients": [
+        {"name": "Gin or graanjenever", "quantity": 40, "unit": "ml"},
+        {"name": "Fresh apple juice", "quantity": 40, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Honey liqueur", "quantity": 15, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 10, "unit": "ml"},
+        {"name": "Egg white", "quantity": 20, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 4,
+      "name": "Golden Apple Old Fashioned",
+      "description": "Fill mixing glass with ice. Add whiskey/armagnac, apple juice, sugar syrup, and bitters. Stir for 15-20 seconds until well chilled. Strain over large ice cube in old fashioned glass. Express orange zest over drink and add mini cinnamon stick.",
+      "duration": 6,
+      "ingredients": [
+        {"name": "Whiskey or armagnac", "quantity": 50, "unit": "ml"},
+        {"name": "Fresh apple juice", "quantity": 20, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 5, "unit": "ml"},
+        {"name": "Bitters", "quantity": 2, "unit": "dashes"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 5,
+      "name": "Apple Pie Highball",
+      "description": "Fill highball glass with ice. Add rum/vodka, apple juice, and cinnamon syrup in order. Stir gently to combine. Top with tonic or ginger ale. Garnish with apple fan and cinnamon sugar rim.",
+      "duration": 4,
+      "ingredients": [
+        {"name": "White rum or vanilla vodka", "quantity": 40, "unit": "ml"},
+        {"name": "Fresh apple juice", "quantity": 80, "unit": "ml"},
+        {"name": "Cinnamon syrup", "quantity": 15, "unit": "ml"},
+        {"name": "Tonic or ginger ale", "quantity": 50, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 6,
+      "name": "Snowy Apple Spritz",
+      "description": "Fill wine glass with ice. Add apple juice, lemon juice, and vanilla syrup. Stir gently. Top with ginger beer. Garnish with thin apple slice and star anise.",
+      "duration": 4,
+      "ingredients": [
+        {"name": "Apple juice", "quantity": 80, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Vanilla syrup", "quantity": 15, "unit": "ml"},
+        {"name": "Ginger beer", "quantity": 50, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 7,
+      "name": "Apple Crumble Shot",
+      "description": "Shake honey liqueur, apple juice, and cream with ice for 10-12 seconds. Strain into shot glass. Add nutmeg sprinkle and cinnamon sugar rim.",
+      "duration": 3,
+      "ingredients": [
+        {"name": "Honey liqueur or Liquor 43", "quantity": 20, "unit": "ml"},
+        {"name": "Apple juice", "quantity": 10, "unit": "ml"},
+        {"name": "Cream or coconut cream", "quantity": 10, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 8,
+      "name": "Arctic Star Martini",
+      "description": "Add gin, passion fruit jenever, lemon juice, and vanilla syrup to shaker with ice. Shake vigorously for 10-12 seconds. Strain into chilled coupe. Garnish with half passion fruit and serve with mini sparkler for show.",
+      "duration": 8,
+      "ingredients": [
+        {"name": "Gin", "quantity": 40, "unit": "ml"},
+        {"name": "Passion fruit jenever", "quantity": 20, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Vanilla syrup", "quantity": 15, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 9,
+      "name": "Golden Armagnac Old Fashioned",
+      "description": "Stir armagnac, sugar syrup, and bitters with ice in mixing glass for 15-20 seconds. Strain over large ice cube in old fashioned glass. Garnish with orange zest and edible gold powder.",
+      "duration": 6,
+      "ingredients": [
+        {"name": "Armagnac", "quantity": 50, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 5, "unit": "ml"},
+        {"name": "Bitters", "quantity": 2, "unit": "dashes"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 10,
+      "name": "Midnight Blue Velvet",
+      "description": "Dry shake vodka, blue curaçao, lemon juice, sugar syrup, and egg white for 10 seconds without ice. Add ice and shake vigorously for 10-12 seconds. Strain into chilled coupe. Top with silver sugar pearls on foam.",
+      "duration": 8,
+      "ingredients": [
+        {"name": "Vodka", "quantity": 40, "unit": "ml"},
+        {"name": "Blue curaçao", "quantity": 20, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 10, "unit": "ml"},
+        {"name": "Egg white", "quantity": 20, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 11,
+      "name": "Porto Royale",
+      "description": "Fill wine glass with ice. Add porto, gin, lemon juice, and sugar syrup. Stir gently. Top with tonic. Garnish with rosemary sprig and dried orange slice.",
+      "duration": 4,
+      "ingredients": [
+        {"name": "Porto", "quantity": 40, "unit": "ml"},
+        {"name": "Gin", "quantity": 20, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 10, "unit": "ml"},
+        {"name": "Tonic", "quantity": 50, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 12,
+      "name": "Caribbean Snowstorm",
+      "description": "Shake white rum, coconut cream, pineapple juice, and lime juice with ice for 10-12 seconds. Strain into tumbler filled with crushed ice. Top with thick layer of coconut flakes.",
+      "duration": 6,
+      "ingredients": [
+        {"name": "White rum", "quantity": 40, "unit": "ml"},
+        {"name": "Coconut cream", "quantity": 30, "unit": "ml"},
+        {"name": "Pineapple juice", "quantity": 40, "unit": "ml"},
+        {"name": "Lime juice", "quantity": 20, "unit": "ml"}
+      ],
+      "dependencies": [1,2]
+    },
+    {
+      "id": 13,
+      "name": "Santa's Sleigh Drop",
+      "description": "Layer shot in shot glass: pour grenadine first. Slowly pour Liquor 43 over back of bar spoon. Repeat with vanilla vodka. Creates three distinct red-gold layers.",
+      "duration": 3,
+      "ingredients": [
+        {"name": "Grenadine", "quantity": 5, "unit": "ml"},
+        {"name": "Liquor 43", "quantity": 20, "unit": "ml"},
+        {"name": "Vanilla vodka", "quantity": 20, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 14,
+      "name": "Blue Reindeer",
+      "description": "Shake tequila, blue curaçao, and lime juice with ice for 10-12 seconds. Strain into shot glass. Garnish with mini lime wheel.",
+      "duration": 3,
+      "ingredients": [
+        {"name": "Tequila", "quantity": 20, "unit": "ml"},
+        {"name": "Blue curaçao", "quantity": 15, "unit": "ml"},
+        {"name": "Lime juice", "quantity": 5, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 15,
+      "name": "Honey Fire Bullet",
+      "description": "Shake honey liqueur, whiskey, and lemon juice with ice for 10-12 seconds. Strain into shot glass. Add cinnamon sugar rim.",
+      "duration": 3,
+      "ingredients": [
+        {"name": "Honey liqueur", "quantity": 20, "unit": "ml"},
+        {"name": "Whiskey", "quantity": 20, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 5, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 16,
+      "name": "Winter Spice Fizz",
+      "description": "Fill highball glass with ice. Add lime juice and cinnamon syrup. Stir gently. Top with ginger ale. Garnish with flambéed rosemary sprig for aroma and star anise.",
+      "duration": 4,
+      "ingredients": [
+        {"name": "Ginger ale", "quantity": 80, "unit": "ml"},
+        {"name": "Cinnamon syrup", "quantity": 20, "unit": "ml"},
+        {"name": "Lime juice", "quantity": 20, "unit": "ml"}
+      ],
+      "dependencies": [1]
+    },
+    {
+      "id": 17,
+      "name": "Frosted Forest",
+      "description": "Fill highball glass with crushed ice. Add blueberry syrup and lemon juice. Top with tonic. Stir lightly. Garnish with sugar rim and blue glitter for festive effect.",
+      "duration": 4,
+      "ingredients": [
+        {"name": "Blueberry syrup", "quantity": 40, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Tonic", "quantity": 50, "unit": "ml"}
+      ],
+      "dependencies": [1,2]
+    },
+    {
+      "id": 18,
+      "name": "Ginger Cranberry Sparkle",
+      "description": "Shake cranberry juice, lemon juice, and sugar syrup with ice for 10-12 seconds. Strain into highball or coupe with ice. Top with ginger ale. Garnish with flambéed rosemary and pomegranate seeds.",
+      "duration": 5,
+      "ingredients": [
+        {"name": "Cranberry juice", "quantity": 60, "unit": "ml"},
+        {"name": "Lemon juice", "quantity": 20, "unit": "ml"},
+        {"name": "Sugar syrup", "quantity": 15, "unit": "ml"},
+        {"name": "Ginger ale", "quantity": 50, "unit": "ml"},
+        {"name": "Pomegranate seeds", "quantity": 10, "unit": "g"}
+      ],
+      "dependencies": [1]
+    }
+  ]
+}
